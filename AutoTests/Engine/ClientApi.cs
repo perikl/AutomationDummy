@@ -1,15 +1,15 @@
 ﻿using RestSharp;
 
-namespace KBCIBack
+namespace ToptalTestAutomation.Engine
 {
-    class ClientApi
+    public class ClientApi : BaseDriver
     {
         private static ClientApi _instance;
         public RestClient Client { get; set; }        
 
         private ClientApi()
         {
-            Client = new RestClient("");            
+            Client = new RestClient(config["urlAPI"]);            
         }
 
         public static ClientApi GetInstance()
