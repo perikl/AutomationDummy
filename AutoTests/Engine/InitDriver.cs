@@ -1,6 +1,8 @@
 ﻿using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.IO;
+using System.Reflection;
 using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 
@@ -17,8 +19,12 @@ namespace ToptalTestAutomation.Engine
             get
             {
                 if(_driver == null)
-                {
+                {                    
                     _driver = new ChromeDriver();
+                    if(_driver == null)
+                    {
+                        _driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+                    }
                     _driver.Url = config["Url"];
                 }
                 return _driver;
@@ -39,7 +45,7 @@ namespace ToptalTestAutomation.Engine
 
         public DriverContext() : base()
         {
-            new DriverManager().SetUpDriver(new ChromeConfig());            
+            new DriverManager().SetUpDriver(new ChromeConfig());    
         }
     }
 }

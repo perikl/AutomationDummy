@@ -35,6 +35,7 @@ namespace ToptalTestAutomation.Tests.Load
         }
 
         [Test]
+        [Category("Load")]
         public void Test()
         {
             var assertions = new[] {

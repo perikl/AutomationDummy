@@ -5,8 +5,10 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <ApplicationIcon />
     <StartupObject />
+	<IsTestProject>true</IsTestProject>
+	<Configurations>Debug;Release;</Configurations>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <None Remove="Engine\Config\config.json" />
   </ItemGroup>
@@ -32,10 +34,6 @@
     <PackageReference Include="Selenium.Support" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="WebDriverManager" Version="2.4.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="TestData\" />
   </ItemGroup>
 
 </Project>
