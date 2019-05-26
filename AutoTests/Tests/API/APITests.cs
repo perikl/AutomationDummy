@@ -24,10 +24,10 @@ namespace ToptalTestAutomation.Tests.API
 
         [Test]
         public void WrongCredentials()
-        {
+        {   
             var request = new RestRequest("v1?apiKey=ay_08HkDwTYC8ygW3NSKRF9iIFSYqL4F&ipAddress=8.8.8.8", Method.GET);
             var response = ClientApi.GetInstance().Client.Execute(request);
-            Assert.AreEqual(HttpStatusCode.Forbidden, response.StatusCode);
+            Assert.AreEqual(HttpStatusCode.Forbidden, response.StatusCode);            
         }
 
         [Test]

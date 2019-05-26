@@ -41,7 +41,7 @@ namespace ToptalTestAutomation.Tests.Load
             var assertions = new[] {
                Assertion.ForStep("simple step", stats => stats.OkCount > 2000, "OkCount > 2000"),
                Assertion.ForStep("simple step", stats => stats.RPS > 100, "RPS > 100"),
-               Assertion.ForStep("simple step", stats => stats.Mean < 5000, "Max request time < 4000"),                              
+               Assertion.ForStep("simple step", stats => stats.Mean < 2000, "Max request time < 2000"),                              
             };
 
             var scenario = BuildScenario()
